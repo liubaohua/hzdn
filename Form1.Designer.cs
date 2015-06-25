@@ -337,7 +337,6 @@ namespace Print
             // 
             this.tbProdNo.Location = new System.Drawing.Point(295, 150);
             this.tbProdNo.Name = "tbProdNo";
-            this.tbProdNo.ReadOnly = true;
             this.tbProdNo.Size = new System.Drawing.Size(125, 21);
             this.tbProdNo.TabIndex = 3;
             // 

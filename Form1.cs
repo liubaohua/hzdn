@@ -410,7 +410,7 @@ namespace Print
                 //    totoallen = ",cBarcodeDefine8='" + tbTotalLen.ToString() + "'";
                 this.sqlConnection1.Open();
 
-                SqlCommand cmdSelect = new SqlCommand("update HY_BarCodeMain set isaleqty=" + gross + ",qty=" + net + " ,cdefine4= " + date + ",cdefine37= " + date + ",cdefine26=" + gross + " where barcode='" + CurrentBarcode + "'", this.sqlConnection1);
+                SqlCommand cmdSelect = new SqlCommand("update HY_BarCodeMain set isaleqty=" + gross + ",qty=" + net + " ,cdefine4= " + date + ",cdefine37= " + date + ",cdefine26=" + gross + ",cBarcodeDefine2='" + tbProdNo.Text + "' where barcode='" + CurrentBarcode + "'", this.sqlConnection1);
                 //cmdSelect.Connection = this.sqlConnection1;
                 int iresult = cmdSelect.ExecuteNonQuery();
             }
