@@ -353,6 +353,7 @@ namespace Print
                 barcodestd = dt.Rows[0]["barcodestd"].ToString();
                 custinvcode = dt.Rows[0]["custinvcode"].ToString();
                 cinvaliascode = dt.Rows[0]["cinvaliascode"].ToString();
+                tbInvAddcode.Text = cinvaliascode;
                     //tbGross.Text = dt.Rows[0]["ccuscode"].ToString(); read from digital scale
                 tbTare.Text = dt.Rows[0]["tare"].ToString();
                 tbTotalLen.Text = dt.Rows[0]["totallen"].ToString();
@@ -383,7 +384,7 @@ namespace Print
                 tbGross.Text = "";// read from digital scale
                 tbTare.Text = "";
                 tbNet.Text = "";//毛重—皮重/轴重=净重
-
+                tbInvAddcode.Text = "";
                 //tbPlanbillCode.Text = "";//计划单号
             }
 
@@ -534,7 +535,8 @@ namespace Print
                            tbNet.Text,
                            CurrentBarcode,
                            tbTotalLen.Text,
-                           tbInvStd.Text
+                           tbInvStd.Text,
+                           tbInvAddcode.Text
                            //DateTime.Now.ToString().Replace(" ", "").Replace(":", "").Replace("-", "").Substring(2)
                            };
             return obj;
@@ -554,7 +556,8 @@ namespace Print
                            tbMacNo.Text,
                            tbStaffCode.Text,
                            CurrentBarcode,
-                           tbInvStd.Text
+                           tbInvStd.Text,
+                           tbInvAddcode.Text
                            };
             return obj;
         }
@@ -568,7 +571,8 @@ namespace Print
                            tbTare.Text,
                            tbNet.Text,
                            tbProdTime.Text,
-                           CurrentBarcode
+                           CurrentBarcode,
+                           tbInvAddcode.Text
                            };
             return obj;
         }
@@ -581,7 +585,8 @@ namespace Print
                            //tbPlanbillCode.Text,
                            tbGross.Text,
                            tbTare.Text,
-                           tbNet.Text
+                           tbNet.Text,
+                           tbInvAddcode.Text
                            
                            };
             return obj;

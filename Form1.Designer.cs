@@ -50,7 +50,6 @@ namespace Print
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.tbBarcode = new System.Windows.Forms.TextBox();
             this.tbInvName = new System.Windows.Forms.TextBox();
             this.tbInvStd = new System.Windows.Forms.TextBox();
@@ -74,6 +73,8 @@ namespace Print
             this.dtFinishDate = new System.Windows.Forms.DateTimePicker();
             this.label19 = new System.Windows.Forms.Label();
             this.tbTotalLen = new System.Windows.Forms.TextBox();
+            this.tbInvAddcode = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // sqlConnection1
@@ -83,7 +84,7 @@ namespace Print
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("宋体", 9F);
-            this.button1.Location = new System.Drawing.Point(45, 267);
+            this.button1.Location = new System.Drawing.Point(45, 294);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 32);
             this.button1.TabIndex = 1;
@@ -121,7 +122,7 @@ namespace Print
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 118);
+            this.label4.Location = new System.Drawing.Point(43, 145);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 2;
@@ -130,7 +131,7 @@ namespace Print
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(44, 153);
+            this.label5.Location = new System.Drawing.Point(44, 180);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 2;
@@ -139,7 +140,7 @@ namespace Print
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(46, 186);
+            this.label6.Location = new System.Drawing.Point(46, 213);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 12);
             this.label6.TabIndex = 2;
@@ -166,7 +167,7 @@ namespace Print
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(236, 87);
+            this.label9.Location = new System.Drawing.Point(240, 87);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 12);
             this.label9.TabIndex = 1;
@@ -175,7 +176,7 @@ namespace Print
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(236, 118);
+            this.label10.Location = new System.Drawing.Point(236, 145);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 12);
             this.label10.TabIndex = 1;
@@ -184,7 +185,7 @@ namespace Print
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(236, 153);
+            this.label11.Location = new System.Drawing.Point(236, 180);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 12);
             this.label11.TabIndex = 1;
@@ -193,7 +194,7 @@ namespace Print
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(230, 186);
+            this.label12.Location = new System.Drawing.Point(230, 213);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(59, 12);
             this.label12.TabIndex = 1;
@@ -229,7 +230,7 @@ namespace Print
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(422, 118);
+            this.label16.Location = new System.Drawing.Point(422, 145);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(29, 12);
             this.label16.TabIndex = 1;
@@ -238,7 +239,7 @@ namespace Print
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(43, 223);
+            this.label17.Location = new System.Drawing.Point(43, 250);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(53, 12);
             this.label17.TabIndex = 1;
@@ -247,23 +248,11 @@ namespace Print
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(450, 229);
+            this.label18.Location = new System.Drawing.Point(450, 256);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(53, 12);
             this.label18.TabIndex = 1;
             this.label18.Text = "总长度KM";
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("宋体", 9F);
-            this.button2.Location = new System.Drawing.Point(412, 267);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 32);
-            this.button2.TabIndex = 0;
-            this.button2.TabStop = false;
-            this.button2.Text = "关闭(&G)";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.CloseApp_Click);
             // 
             // tbBarcode
             // 
@@ -294,12 +283,12 @@ namespace Print
             this.tbInvCode.Location = new System.Drawing.Point(103, 87);
             this.tbInvCode.Name = "tbInvCode";
             this.tbInvCode.ReadOnly = true;
-            this.tbInvCode.Size = new System.Drawing.Size(125, 21);
+            this.tbInvCode.Size = new System.Drawing.Size(124, 21);
             this.tbInvCode.TabIndex = 3;
             // 
             // tbOrderCode
             // 
-            this.tbOrderCode.Location = new System.Drawing.Point(102, 115);
+            this.tbOrderCode.Location = new System.Drawing.Point(102, 142);
             this.tbOrderCode.Name = "tbOrderCode";
             this.tbOrderCode.ReadOnly = true;
             this.tbOrderCode.Size = new System.Drawing.Size(125, 21);
@@ -307,7 +296,7 @@ namespace Print
             // 
             // tbAxisBrand
             // 
-            this.tbAxisBrand.Location = new System.Drawing.Point(102, 150);
+            this.tbAxisBrand.Location = new System.Drawing.Point(102, 177);
             this.tbAxisBrand.Name = "tbAxisBrand";
             this.tbAxisBrand.ReadOnly = true;
             this.tbAxisBrand.Size = new System.Drawing.Size(125, 21);
@@ -317,7 +306,7 @@ namespace Print
             // 
             this.tbGross.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tbGross.ForeColor = System.Drawing.Color.Red;
-            this.tbGross.Location = new System.Drawing.Point(102, 177);
+            this.tbGross.Location = new System.Drawing.Point(102, 204);
             this.tbGross.Name = "tbGross";
             this.tbGross.ReadOnly = true;
             this.tbGross.Size = new System.Drawing.Size(125, 29);
@@ -327,7 +316,7 @@ namespace Print
             // 
             this.tbTare.Font = new System.Drawing.Font("宋体", 14.25F);
             this.tbTare.ForeColor = System.Drawing.Color.Red;
-            this.tbTare.Location = new System.Drawing.Point(295, 182);
+            this.tbTare.Location = new System.Drawing.Point(295, 209);
             this.tbTare.Name = "tbTare";
             this.tbTare.ReadOnly = true;
             this.tbTare.Size = new System.Drawing.Size(125, 29);
@@ -335,14 +324,14 @@ namespace Print
             // 
             // tbProdNo
             // 
-            this.tbProdNo.Location = new System.Drawing.Point(295, 150);
+            this.tbProdNo.Location = new System.Drawing.Point(295, 177);
             this.tbProdNo.Name = "tbProdNo";
             this.tbProdNo.Size = new System.Drawing.Size(125, 21);
             this.tbProdNo.TabIndex = 3;
             // 
             // tbVenCode
             // 
-            this.tbVenCode.Location = new System.Drawing.Point(295, 115);
+            this.tbVenCode.Location = new System.Drawing.Point(295, 142);
             this.tbVenCode.Name = "tbVenCode";
             this.tbVenCode.ReadOnly = true;
             this.tbVenCode.Size = new System.Drawing.Size(125, 21);
@@ -382,7 +371,7 @@ namespace Print
             // 
             // tbStaffCode
             // 
-            this.tbStaffCode.Location = new System.Drawing.Point(484, 115);
+            this.tbStaffCode.Location = new System.Drawing.Point(484, 142);
             this.tbStaffCode.Name = "tbStaffCode";
             this.tbStaffCode.ReadOnly = true;
             this.tbStaffCode.Size = new System.Drawing.Size(125, 21);
@@ -392,7 +381,7 @@ namespace Print
             // 
             this.tbNet.Font = new System.Drawing.Font("宋体", 14.25F);
             this.tbNet.ForeColor = System.Drawing.Color.Red;
-            this.tbNet.Location = new System.Drawing.Point(484, 182);
+            this.tbNet.Location = new System.Drawing.Point(484, 209);
             this.tbNet.Name = "tbNet";
             this.tbNet.ReadOnly = true;
             this.tbNet.Size = new System.Drawing.Size(123, 29);
@@ -401,7 +390,7 @@ namespace Print
             // btnReadScale
             // 
             this.btnReadScale.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnReadScale.Location = new System.Drawing.Point(219, 267);
+            this.btnReadScale.Location = new System.Drawing.Point(529, 294);
             this.btnReadScale.Name = "btnReadScale";
             this.btnReadScale.Size = new System.Drawing.Size(80, 32);
             this.btnReadScale.TabIndex = 2;
@@ -413,7 +402,7 @@ namespace Print
             // 
             this.cbLabelNo.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cbLabelNo.FormattingEnabled = true;
-            this.cbLabelNo.Location = new System.Drawing.Point(102, 220);
+            this.cbLabelNo.Location = new System.Drawing.Point(102, 247);
             this.cbLabelNo.Name = "cbLabelNo";
             this.cbLabelNo.Size = new System.Drawing.Size(342, 27);
             this.cbLabelNo.TabIndex = 4;
@@ -421,7 +410,7 @@ namespace Print
             // cbPort
             // 
             this.cbPort.FormattingEnabled = true;
-            this.cbPort.Location = new System.Drawing.Point(484, 151);
+            this.cbPort.Location = new System.Drawing.Point(484, 178);
             this.cbPort.Name = "cbPort";
             this.cbPort.Size = new System.Drawing.Size(125, 20);
             this.cbPort.TabIndex = 5;
@@ -429,7 +418,7 @@ namespace Print
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(422, 154);
+            this.label20.Location = new System.Drawing.Point(422, 181);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(65, 12);
             this.label20.TabIndex = 1;
@@ -447,7 +436,7 @@ namespace Print
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(426, 194);
+            this.label19.Location = new System.Drawing.Point(426, 221);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(29, 12);
             this.label19.TabIndex = 1;
@@ -457,11 +446,28 @@ namespace Print
             // 
             this.tbTotalLen.Font = new System.Drawing.Font("宋体", 14.25F);
             this.tbTotalLen.ForeColor = System.Drawing.Color.Red;
-            this.tbTotalLen.Location = new System.Drawing.Point(509, 220);
+            this.tbTotalLen.Location = new System.Drawing.Point(509, 247);
             this.tbTotalLen.Name = "tbTotalLen";
             this.tbTotalLen.ReadOnly = true;
             this.tbTotalLen.Size = new System.Drawing.Size(98, 29);
             this.tbTotalLen.TabIndex = 3;
+            // 
+            // tbInvAddcode
+            // 
+            this.tbInvAddcode.Location = new System.Drawing.Point(103, 115);
+            this.tbInvAddcode.Name = "tbInvAddcode";
+            this.tbInvAddcode.ReadOnly = true;
+            this.tbInvAddcode.Size = new System.Drawing.Size(317, 21);
+            this.tbInvAddcode.TabIndex = 3;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(43, 115);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(53, 12);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "产品代码";
             // 
             // Form1
             // 
@@ -480,6 +486,7 @@ namespace Print
             this.Controls.Add(this.tbGross);
             this.Controls.Add(this.tbAxisBrand);
             this.Controls.Add(this.tbOrderCode);
+            this.Controls.Add(this.tbInvAddcode);
             this.Controls.Add(this.tbInvCode);
             this.Controls.Add(this.tbInvStd);
             this.Controls.Add(this.tbNet);
@@ -491,6 +498,7 @@ namespace Print
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.label21);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label12);
@@ -508,7 +516,6 @@ namespace Print
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnReadScale);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -543,7 +550,6 @@ namespace Print
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox tbBarcode;
         private System.Windows.Forms.TextBox tbInvName;
         private System.Windows.Forms.TextBox tbInvStd;
@@ -567,6 +573,8 @@ namespace Print
         private System.Windows.Forms.DateTimePicker dtFinishDate;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox tbTotalLen;
+        private System.Windows.Forms.TextBox tbInvAddcode;
+        private System.Windows.Forms.Label label21;
     }
 }
 
