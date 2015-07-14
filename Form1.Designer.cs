@@ -75,6 +75,7 @@ namespace Print
             this.tbTotalLen = new System.Windows.Forms.TextBox();
             this.tbInvAddcode = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.lbTip = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // sqlConnection1
@@ -469,6 +470,16 @@ namespace Print
             this.label21.TabIndex = 2;
             this.label21.Text = "产品代码";
             // 
+            // lbTip
+            // 
+            this.lbTip.AutoSize = true;
+            this.lbTip.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbTip.ForeColor = System.Drawing.Color.Red;
+            this.lbTip.Location = new System.Drawing.Point(228, 301);
+            this.lbTip.Name = "lbTip";
+            this.lbTip.Size = new System.Drawing.Size(0, 24);
+            this.lbTip.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -498,6 +509,7 @@ namespace Print
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.lbTip);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -575,6 +587,7 @@ namespace Print
         private System.Windows.Forms.TextBox tbTotalLen;
         private System.Windows.Forms.TextBox tbInvAddcode;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label lbTip;
     }
 }
 

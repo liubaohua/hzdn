@@ -299,7 +299,7 @@ namespace Print
                     MessageBox.Show("请选择电子称端口", "提示");
                     return;
                 }
-                SqlCommand cmdSelect = new SqlCommand("select i.cinvname,i.cinvcode,i.cInvAddCode as cinvaliascode,i.cinvstd,b.cdefine2 as ccuscode,b.cSrcCode as mocode,b.cdefine3 as ordercode,b.cdefine10 as vencode,b.cdefine6 as prodtime,b.cdefine4 as finishtime,b.cBarcodeDefine1 as macno,b.cBarcodeDefine2 as prodno,b.cDefine13 as custinvcode,b.cDefine14 as barcodestd,b.cdefine9 as axisbrand,b.cBarcodeDefine3 as staffno,b.cdefine16 as tare,b.cBarcodeDefine8 as totallen from HY_BarCodeMain b,Inventory i where b.Cinvcode=i.cinvcode and b.barcode='" + tbBarcode.Text + "'", this.sqlConnection1);
+                SqlCommand cmdSelect = new SqlCommand("select i.cinvname,i.cinvcode,i.cInvAddCode as cinvaliascode,i.cinvstd,b.cdefine2 as ccuscode,b.cSrcCode as mocode,b.cdefine3 as ordercode,b.cdefine10 as vencode,b.cdefine6 as prodtime,b.cdefine4 as finishtime,b.cBarcodeDefine1 as macno,b.cBarcodeDefine2 as prodno,b.cDefine13 as custinvcode,b.cDefine14 as barcodestd,b.cdefine9 as axisbrand,b.cBarcodeDefine3 as staffno,b.cdefine16 as tare,b.cBarcodeDefine8 as totallen,b.cDefine32 as printflag from HY_BarCodeMain b,Inventory i where b.Cinvcode=i.cinvcode and b.barcode='" + tbBarcode.Text + "'", this.sqlConnection1);
                 //cmdSelect.Parameters.Add("@ID", SqlDbType.Int, 4);
                 //cmdSelect.Parameters["@ID"].Value = InvCode
                 this.sqlConnection1.Open();
@@ -357,6 +357,11 @@ namespace Print
                     //tbGross.Text = dt.Rows[0]["ccuscode"].ToString(); read from digital scale
                 tbTare.Text = dt.Rows[0]["tare"].ToString();
                 tbTotalLen.Text = dt.Rows[0]["totallen"].ToString();
+                string printflag = dt.Rows[0]["printflag"].ToString();
+                if ("Y".Equals(printflag))
+                    lbTip.Text = "此条码已扫描过";
+                else
+                    lbTip.Text = "";
                 //tbPlanbillCode.Text = dt.Rows[0]["planbillcode"].ToString();//计划单号
                 //tbNet.Text = dt.Rows[0]["net"].ToString();//毛重—皮重/轴重=净重
             }
@@ -386,6 +391,7 @@ namespace Print
                 tbNet.Text = "";//毛重—皮重/轴重=净重
                 tbInvAddcode.Text = "";
                 //tbPlanbillCode.Text = "";//计划单号
+                lbTip.Text = "";
             }
 
             
@@ -411,7 +417,7 @@ namespace Print
                 //    totoallen = ",cBarcodeDefine8='" + tbTotalLen.ToString() + "'";
                 this.sqlConnection1.Open();
 
-                SqlCommand cmdSelect = new SqlCommand("update HY_BarCodeMain set isaleqty=" + gross + ",qty=" + net + " ,cdefine4= " + date + ",cdefine37= " + date + ",cdefine26=" + gross + ",cBarcodeDefine2='" + tbProdNo.Text + "' where barcode='" + CurrentBarcode + "'", this.sqlConnection1);
+                SqlCommand cmdSelect = new SqlCommand("update HY_BarCodeMain set cDefine32='Y',isaleqty=" + gross + ",qty=" + net + " ,cdefine4= " + date + ",cdefine37= " + date + ",cdefine26=" + gross + ",cBarcodeDefine2='" + tbProdNo.Text + "' where barcode='" + CurrentBarcode + "'", this.sqlConnection1);
                 //cmdSelect.Connection = this.sqlConnection1;
                 int iresult = cmdSelect.ExecuteNonQuery();
             }
