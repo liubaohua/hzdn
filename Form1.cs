@@ -420,6 +420,7 @@ namespace Print
                 throw e;
             }
             finally {
+                tbBarcode.Focus();//20150714
                 this.sqlConnection1.Close();            
             }
             
